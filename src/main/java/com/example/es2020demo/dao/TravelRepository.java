@@ -8,6 +8,6 @@ import java.util.List;
 
 @Repository
 public interface TravelRepository extends ElasticsearchRepository<Travel,Long> {
-    List<Travel> findTravelByShortIntroduceContaining(String content);
+    List<Travel> findTravelsByShortIntroduceLike(String content);
     Integer deleteTravelById(Long id);
 }

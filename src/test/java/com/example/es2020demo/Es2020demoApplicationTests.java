@@ -2,10 +2,13 @@ package com.example.es2020demo;
 
 import com.example.es2020demo.dao.CreateIndex;
 import com.example.es2020demo.dao.TravelRepository;
+import com.example.es2020demo.pojo.Travel;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
+
+import java.util.List;
 
 @SpringBootTest
 class Es2020demoApplicationTests {
@@ -37,8 +40,8 @@ class Es2020demoApplicationTests {
 //        repository.saveAll(travelList);
 //        Iterable<Travel> all = repository.findAll();
 //        all.forEach(travel -> System.out.println(travel.toString()));
-//        List<Travel> msg = repository.findTravelByShortIntroduceContaining("哦打死");
-//        System.out.println(msg.size());
+        List<Travel> msg = repository.findTravelsByShortIntroduceLike("哦打死");
+        System.out.println(msg.size());
 
     }
 
